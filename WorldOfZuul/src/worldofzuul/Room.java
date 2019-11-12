@@ -49,10 +49,10 @@ public class Room
     {
         if(itemList.size() == 0)
         {
-            return "You are " + description + ".\n" + getExitString();
+            return System.lineSeparator() + "You are " + description + ".\n" + getExitString();
         } else
         {
-            return "You are " + description + ".\n" + getExitString() + System.lineSeparator() + getRoomItems(); //".\n" = ny linje
+            return System.lineSeparator() + "You are " + description + ".\n" + getExitString() + System.lineSeparator() + getRoomItems(); //".\n" = ny linje
         }
     }
 

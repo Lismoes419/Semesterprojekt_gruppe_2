@@ -12,7 +12,7 @@ public enum CommandWord
     INVENTORY("inventory"),
     ROOMITEMS("items"),
     SORT("sort"),
-	BUY("buy");
+    BUY("buy");
     
     private String commandString;
     

@@ -3,13 +3,19 @@ package worldofzuul;
 
 public class ItemLock extends Lock{
     
-    public Item item;
+    private Equipment equipment;
+    
+    //Constructor
+    public ItemLock(Equipment equipment)
+    {
+        this.equipment = equipment;
+    }
     
     @Override
     public void unlock(Player player)
     {
         //Check om vi har det rigtige item
-        if(player.hasEquipment(item))
+        if(player.hasEquipment(equipment))
         {
             setLocked(false);
         }
@@ -17,6 +23,10 @@ public class ItemLock extends Lock{
     @Override
     public String getCondition()
     {
-        return item.getName();
+        return equipment.getName();
+    }
+    public Equipment getConditionObject()
+    {
+        return equipment;
     }
 }

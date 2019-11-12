@@ -22,7 +22,7 @@ public class PointLock extends Lock{
     @Override
     public String getCondition()
     {
-        return String.valueOf(amt);
+        return String.valueOf(amt) + " points";
     }
     
     public int getAmt()

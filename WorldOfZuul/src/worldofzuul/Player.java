@@ -47,18 +47,6 @@ public class Player {
         room.removeRoomItem(room.getRoomItem(item));
     }
     
-    private void buyItem(Command command)
-    {
-    	if(!command.hasSecondWord()) {
-    		System.out.println("Buy what?");
-    		return; //stop metode
-    	}
-    	
-    	String item = command.getSecondWord();
-    	
-    	
-    }
-    
     public void getAllItems()
     {
         if(inventory.size() == 0)
@@ -89,10 +77,7 @@ public class Player {
     }
     public void emptyInventory()
     {
-        for(int i = 0; i < inventory.size(); i++)
-        {
-            inventory.remove(inventory.get(i));
-        }
+        inventory.clear();
     }
     
     public int getInventoryValue()
@@ -106,17 +91,22 @@ public class Player {
         return value;
     }
     
-    public boolean hasEquipment(Item item)
+    public boolean hasEquipment(Equipment item)
     {
         for(int i = 0; i < equipment.size(); i++)
         {
-            if(equipment.get(i).equals(item))
+            if(equipment.get(i).getName().equals(item.getName()))
             {
                 return true;
             }
         }
         
         return false;
+    }
+    
+    public void addEquipment(Equipment item)
+    {
+        equipment.add(item);
     }
     
     public int getPoints()
@@ -127,5 +117,9 @@ public class Player {
     {
         this.points += amt;
         System.out.println("You now have " + points + " points");
+    }
+    public void removePoints(int amt)
+    {
+        this.points -= amt;
     }
 }

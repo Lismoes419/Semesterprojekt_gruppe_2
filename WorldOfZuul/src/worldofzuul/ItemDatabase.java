@@ -7,7 +7,7 @@ public class ItemDatabase {
     //List
     public ArrayList<Garbage> list = new ArrayList<Garbage>();
     
-    //Single Items
+    //Garbage
     public Garbage bottle = new Garbage("bottle", 1);
     public Garbage bag = new Garbage("bag", 1);
     public Garbage straw = new Garbage("straw", 1);
@@ -15,6 +15,11 @@ public class ItemDatabase {
     public Garbage plastic = new Garbage("plastic", 1);
     public Garbage fishingNet = new Garbage("net", 1);
     public Garbage can = new Garbage("can", 1);
+    
+    //Equipment
+    public Equipment Goggles = new Equipment("goggles", 1);
+    public Equipment Suit = new Equipment("suit", 10);
+    public Equipment OxygenTank = new Equipment("oxygenTank", 50);
     
     public ItemDatabase()
     {

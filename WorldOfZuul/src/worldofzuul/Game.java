@@ -20,7 +20,8 @@ public class Game
         parser = new Parser(); //Laver ny parser der ikke tager nogen parametre
     }
     
-    public Room map, dumpster, shop, pacific, atlantic, indian, arctic, southern; //Laver nye (tomme) rum
+    public Room map, dumpster, pacific, atlantic, indian, arctic, southern; //Laver nye (tomme) rum
+    Shop shop;
     
     //CreateRooms metode
     private void createRooms()
@@ -28,8 +29,8 @@ public class Game
         //Laver objekterne til rummene, der tager en beskrivelse som parameter
         map = new Room("in the main area");
         dumpster = new Room("next to a dumpster. Here you can recycle your collected plastic");
-        shop = new Room("in the shop. You can buy equipment upgrade");
-        pacific = new Room("in the Pacific Ocean", new PointLock(1));
+        shop = new Shop("in the shop. Here you can buy equipment");
+        pacific = new Room("in the Pacific Ocean", new ItemLock(database.Goggles));
         atlantic = new Room("in the Atlantic Ocean", new PointLock(10));
         indian = new Room("in the Indian Ocean", new PointLock(15));
         arctic = new Room("in the Arctic Ocean", new PointLock(20));
@@ -112,6 +113,13 @@ public class Game
         //Tilføj items
         //Pacific
         pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
+        pacific.setRoomItem(database.bottle);
         
         //Southern
         southern.setRoomItem(database.bottle);
@@ -137,6 +145,14 @@ public class Game
         arctic.setRoomItem(database.bottle);
         // </editor-fold>
         
+        // <editor-fold defaultstate="collapsed" desc=" SHOP ">
+        shop.addEquipment(database.Goggles);
+        shop.addEquipment(database.Suit);
+        shop.addEquipment(database.OxygenTank);
+        
+        // </editor-fold>
+        
+        
         //Sætter vores nuværende rum til et af de rum vi har oprettet
         currentRoom = map;
     }
@@ -151,6 +167,7 @@ public class Game
         while (! finished) { //mens finished = false (Loop indtil finished = true)
             Command command = parser.getCommand(); //Ny kommando = vores text input
             finished = processCommand(command); //Hvis vi skriver quit vil processCommand returnere true og finished vil blive true
+            unlockRooms();
         }
         System.out.println("Thank you for playing.  Good bye."); //Når finished = true ryger vi ud af vores loop (IKKE FØR), og vi er færdige med spillet
     }
@@ -182,7 +199,11 @@ public class Game
             printHelp(); //Kald metode
         }
         else if (commandWord == CommandWord.BUY) { //hvis vi skriver "buy"
-            //player.buyItem(command); //Buy item
+            if(currentRoom == shop){
+                shop.buy(command, player);
+            } else{
+                System.out.println("You are not in the shop");
+            }
         }
         else if (commandWord == CommandWord.GO) { //hvis vi skriver "go"
             goRoom(command); //Kald metode
@@ -205,6 +226,7 @@ public class Game
         else if(commandWord == CommandWord.EXITS) {
             System.out.println(currentRoom.getExitString());
         }
+        
         return wantToQuit; //returnerer boolean
     }
 
@@ -231,20 +253,29 @@ public class Game
         Room nextRoom = currentRoom.getExit(direction); //nyt rum = nuværende rum.getExit(retning)
         
         try{
-            //Hvis næste rum er locked
-            if(nextRoom.hasLock() && nextRoom.getLock().isLocked())
+            if(nextRoom instanceof Shop)
             {
-                System.out.println("Room is locked, you need " + nextRoom.getLock().getCondition() + "points");
-                return; //Stop metode
-            }
-        
-            if (nextRoom == null) { //Check om der er et nextRoom (vi kunne have skrevet forkert)
-                System.out.println("There is no door!");
-            }
-            else { //Ellers ændrer vi vores nuværende rum til det næste rum vi har valgt
                 currentRoom = nextRoom;
-                System.out.println(currentRoom.getLongDescription()); //printer beskrivelse af det næste rum (som nu er vores nuværende)
-            } 
+                System.out.println(currentRoom.getLongDescription());
+                
+                Shop shopRoom = (Shop)nextRoom;
+                System.out.println(shopRoom.getList());
+            } else{
+                //Hvis næste rum er locked
+                if(nextRoom.hasLock() && nextRoom.getLock().isLocked())
+                {
+                    System.out.println("Room is locked, you need " + nextRoom.getLock().getCondition());
+                    return; //Stop metode
+                }
+        
+                if (nextRoom == null) { //Check om der er et nextRoom (vi kunne have skrevet forkert)
+                    System.out.println("There is no door!");
+                }
+                else { //Ellers ændrer vi vores nuværende rum til det næste rum vi har valgt
+                    currentRoom = nextRoom;
+                    System.out.println(currentRoom.getLongDescription()); //printer beskrivelse af det næste rum (som nu er vores nuværende)
+                }
+            }
         } catch(NullPointerException e){
             System.out.println("No such Room exists");
         }
@@ -276,15 +307,19 @@ public class Game
         player.addPoints(player.getInventoryValue()); //Tilføj point
         player.emptyInventory(); //Tøm inventory
         
-        //Loop igennem alle rum
-        for(int i = 0; i < roomList.size(); i++)
+        //unlockRooms();
+    }
+    
+    
+    public void unlockRooms()
+    {
+        for (int i = 0; i < roomList.size(); i++)
         {
             if(!roomList.get(i).hasLock())
             {
                 continue; //Stop denne iteration
             }
             
-            //Unlock rum
             roomList.get(i).getLock().unlock(player);
         }
     }
