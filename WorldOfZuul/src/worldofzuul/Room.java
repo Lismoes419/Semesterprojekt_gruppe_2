@@ -10,7 +10,7 @@ public class Room
     private Lock lock;
 
     //Lister
-    private ArrayList<Item> itemList = new ArrayList<Item>();
+    private ArrayList<Garbage> itemList = new ArrayList<Garbage>();
     
     //Constructor der tager String som argument
     public Room(String description) 
@@ -82,18 +82,18 @@ public class Room
         return exits.get(direction);
     }
     
-    public void setRoomItem(Item item)
+    public void setRoomItem(Garbage garbage)
     {
         //Opret nyt objekt
-        Item temp = new Item(item.getName(), item.getAmount());
+        Garbage temp = new Garbage(garbage.getName(), garbage.getAmount());
         //Tilføj til itemList
         itemList.add(temp);
     }
-    public void removeRoomItem(Item item)
+    public void removeRoomItem(Garbage garbage)
     {
         for(int i = 0; i < itemList.size(); i++)
         {
-            if(itemList.get(i).equals(item))
+            if(itemList.get(i).equals(garbage))
             {
                 itemList.remove(i);
             }
@@ -114,7 +114,7 @@ public class Room
         return false;
     }
     
-    public Item getRoomItem(String name)
+    public Garbage getRoomItem(String name)
     {
         for(int i = 0; i < itemList.size(); i++)
         {

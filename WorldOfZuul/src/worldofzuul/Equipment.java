@@ -4,10 +4,17 @@ import java.util.ArrayList;
 
 public class Equipment extends Item {
 
-	private ArrayList<Item> shopItems = new ArrayList<Item>();
-	
-	
-	
-	
-	
+    //variables
+    private int price;
+    
+    public Equipment(String name, int price)
+    {
+        setName(name);
+        this.price = price;
+    }
+    
+    public int getPrice()
+    {
+        return price;
+    }
 }

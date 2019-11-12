@@ -4,13 +4,13 @@ import java.lang.reflect.*;
 
 public class Player {
     private int points = 0;
-    private ArrayList<Item> inventory = new ArrayList<Item>();
+    private ArrayList<Garbage> inventory = new ArrayList<Garbage>();
     private ArrayList<Item> equipment = new ArrayList<Item>();
     
 
-    public void addItem(Item item)
+    public void addItem(Garbage garbage)
     {
-        inventory.add(item);
+        inventory.add(garbage);
     }
     public void addItem(Command command, Room room)
     {
@@ -82,10 +82,10 @@ public class Player {
         System.out.println(returnString);
     }
     
-    public void removeItem(Item item, Room room)
+    public void removeItem(Garbage garbage, Room room)
     {
-        room.setRoomItem(item);
-        inventory.remove(item);
+        room.setRoomItem(garbage);
+        inventory.remove(garbage);
     }
     public void emptyInventory()
     {

@@ -1,30 +1,18 @@
 package worldofzuul;
 
 
-public class Item {
+public abstract class Item {
     
     //Variables
     private String name;
-    private int amount;
     
-    //Constructors
-    public Item(String name, int amount)
+    
+    public void setName(String name)
     {
         this.name = name;
-        this.amount = amount;
     }
-
     public String getName()
     {
         return this.name;
-    }
-    public int getAmount()
-    {
-        return this.amount;
-    }
-    
-    public void addAmount(int amt)
-    {
-        this.amount += amt;
     }
 }

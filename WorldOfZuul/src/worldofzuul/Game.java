@@ -28,7 +28,7 @@ public class Game
         //Laver objekterne til rummene, der tager en beskrivelse som parameter
         map = new Room("in the main area");
         dumpster = new Room("next to a dumpster. Here you can recycle your collected plastic");
-        shop = new Room("in the shop. You can buy equipment upgrades here");
+        shop = new Room("in the shop. You can buy equipment upgrade");
         pacific = new Room("in the Pacific Ocean", new PointLock(1));
         atlantic = new Room("in the Atlantic Ocean", new PointLock(10));
         indian = new Room("in the Indian Ocean", new PointLock(15));
@@ -68,7 +68,7 @@ public class Game
         shop.setExit("indian", indian);
         shop.setExit("southern", southern);
         shop.setExit("arctic", arctic);
-        shop.setExit("dumpster", dumpster;
+        shop.setExit("dumpster", dumpster);
 
         southern.setExit("map", map);
         southern.setExit("pacific", pacific);
@@ -182,7 +182,7 @@ public class Game
             printHelp(); //Kald metode
         }
         else if (commandWord == CommandWord.BUY) { //hvis vi skriver "buy"
-        	buyItem(command); //Buy item
+            //player.buyItem(command); //Buy item
         }
         else if (commandWord == CommandWord.GO) { //hvis vi skriver "go"
             goRoom(command); //Kald metode
@@ -281,7 +281,7 @@ public class Game
         {
             if(!roomList.get(i).hasLock())
             {
-                return; //Stop metode
+                continue; //Stop denne iteration
             }
             
             //Unlock rum

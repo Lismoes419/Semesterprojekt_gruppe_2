@@ -5,16 +5,16 @@ import java.util.Random;
 public class ItemDatabase {
     
     //List
-    public ArrayList<Item> list = new ArrayList<Item>();
+    public ArrayList<Garbage> list = new ArrayList<Garbage>();
     
     //Single Items
-    public Item bottle = new Item("bottle", 1);
-    public Item bag = new Item("bag", 1);
-    public Item straw = new Item("straw", 1);
-    public Item jug = new Item("jug", 1);
-    public Item plastic = new Item("plastic", 1);
-    public Item fishingNet = new Item("net", 1);
-    public Item can = new Item("can", 1);
+    public Garbage bottle = new Garbage("bottle", 1);
+    public Garbage bag = new Garbage("bag", 1);
+    public Garbage straw = new Garbage("straw", 1);
+    public Garbage jug = new Garbage("jug", 1);
+    public Garbage plastic = new Garbage("plastic", 1);
+    public Garbage fishingNet = new Garbage("net", 1);
+    public Garbage can = new Garbage("can", 1);
     
     public ItemDatabase()
     {
@@ -27,7 +27,7 @@ public class ItemDatabase {
         list.add(can);
     }
     
-    public Item randomItem()
+    public Garbage randomItem()
     {
         Random random = new Random();
         
