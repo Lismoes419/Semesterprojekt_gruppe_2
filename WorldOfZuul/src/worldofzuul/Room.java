@@ -84,7 +84,10 @@ public class Room
     
     public void setRoomItem(Item item)
     {
-        itemList.add(item);
+        //Opret nyt objekt
+        Item temp = new Item(item.getName(), item.getAmount());
+        //Tilføj til itemList
+        itemList.add(temp);
     }
     public void removeRoomItem(Item item)
     {

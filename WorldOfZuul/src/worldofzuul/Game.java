@@ -9,6 +9,7 @@ public class Game
     private Room currentRoom;
     private Player player = new Player();
     private ArrayList<Room> roomList = new ArrayList<>();
+    private ItemDatabase database = new ItemDatabase();
     
     
     //Game metode
@@ -89,30 +90,30 @@ public class Game
         // <editor-fold defaultstate="collapsed" desc=" ITEMS ">
         //Tilføj items
         //Pacific
-        pacific.setRoomItem(new Item("bottles", 5));
+        pacific.setRoomItem(database.bottle);
         
         //Southern
-        southern.setRoomItem(new Item("can", 1));
-        southern.setRoomItem(new Item("bag", 1));
-        southern.setRoomItem(new Item("bottles", 2));
+        southern.setRoomItem(database.bottle);
+        southern.setRoomItem(database.randomItem());
+        southern.setRoomItem(database.randomItem());
+        //southern.setRoomItem(database.bag);
         
         //Atlantic
-        atlantic.setRoomItem(new Item("can", 2));
-        atlantic.setRoomItem(new Item("garbage", 20));
-        atlantic.setRoomItem(new Item("jug", 1));
-        atlantic.setRoomItem(new Item("bottle", 1));
+        atlantic.setRoomItem(database.can);
+        atlantic.setRoomItem(database.jug);
+        atlantic.setRoomItem(database.bottle);
         
         //Indian
-        indian.setRoomItem(new Item("net", 2));
-        indian.setRoomItem(new Item("garbage", 15));
-        indian.setRoomItem(new Item("bottle", 1));
-        indian.setRoomItem(new Item("straw", 2));
+        indian.setRoomItem(database.fishingNet);
+        indian.setRoomItem(database.plastic);
+        indian.setRoomItem(database.bottle);
+        indian.setRoomItem(database.straw);
         
         //Arctic
-        arctic.setRoomItem(new Item("net", 2));
-        arctic.setRoomItem(new Item("garbage", 12));
-        arctic.setRoomItem(new Item("bag", 1));
-        arctic.setRoomItem(new Item("bottle", 1));
+        arctic.setRoomItem(database.fishingNet);
+        arctic.setRoomItem(database.plastic);
+        arctic.setRoomItem(database.bag);
+        arctic.setRoomItem(database.bottle);
         // </editor-fold>
         
         //Sætter vores nuværende rum til et af de rum vi har oprettet
@@ -175,7 +176,7 @@ public class Game
             System.out.println(currentRoom.getRoomItems());
         }
         else if(commandWord == CommandWord.SORT) {
-            Dumpster();
+            dumpster();
         }
         else if(commandWord == CommandWord.EXITS) {
             System.out.println(currentRoom.getExitString());
@@ -205,19 +206,23 @@ public class Game
 
         Room nextRoom = currentRoom.getExit(direction); //nyt rum = nuværende rum.getExit(retning)
         
-        //Hvis næste rum er locked
-        if(nextRoom.hasLock() && nextRoom.getLock().isLocked())
-        {
-            System.out.println("Room is locked, you need " + nextRoom.getLock().getCondition() + "points");
-            return; //Stop metode
-        }
+        try{
+            //Hvis næste rum er locked
+            if(nextRoom.hasLock() && nextRoom.getLock().isLocked())
+            {
+                System.out.println("Room is locked, you need " + nextRoom.getLock().getCondition() + "points");
+                return; //Stop metode
+            }
         
-        if (nextRoom == null) { //Check om der er et nextRoom (vi kunne have skrevet forkert)
-            System.out.println("There is no door!");
-        }
-        else { //Ellers ændrer vi vores nuværende rum til det næste rum vi har valgt
-            currentRoom = nextRoom;
-            System.out.println(currentRoom.getLongDescription()); //printer beskrivelse af det næste rum (som nu er vores nuværende)
+            if (nextRoom == null) { //Check om der er et nextRoom (vi kunne have skrevet forkert)
+                System.out.println("There is no door!");
+            }
+            else { //Ellers ændrer vi vores nuværende rum til det næste rum vi har valgt
+                currentRoom = nextRoom;
+                System.out.println(currentRoom.getLongDescription()); //printer beskrivelse af det næste rum (som nu er vores nuværende)
+            } 
+        } catch(NullPointerException e){
+            System.out.println("No such Room exists");
         }
     }
     
@@ -235,7 +240,7 @@ public class Game
     }
     
     //dumpster metode
-    public void Dumpster()
+    public void dumpster()
     {
         //Check om vi er i det forkerte rum
         if(currentRoom != dumpster)
