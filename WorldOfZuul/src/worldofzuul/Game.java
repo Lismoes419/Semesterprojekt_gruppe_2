@@ -20,7 +20,7 @@ public class Game
         parser = new Parser(); //Laver ny parser der ikke tager nogen parametre
     }
     
-    public Room map, dumpster, pacific, atlantic, indian, arctic, southern; //Laver nye (tomme) rum
+    public Room map, dumpster, shop, pacific, atlantic, indian, arctic, southern; //Laver nye (tomme) rum
     
     //CreateRooms metode
     private void createRooms()
@@ -28,11 +28,13 @@ public class Game
         //Laver objekterne til rummene, der tager en beskrivelse som parameter
         map = new Room("in the main area");
         dumpster = new Room("next to a dumpster. Here you can recycle your collected plastic");
+        shop = new Room("in the shop. You can buy equipment upgrades here");
         pacific = new Room("in the Pacific Ocean", new PointLock(1));
         atlantic = new Room("in the Atlantic Ocean", new PointLock(10));
         indian = new Room("in the Indian Ocean", new PointLock(15));
         arctic = new Room("in the Arctic Ocean", new PointLock(20));
         southern = new Room("in the Southern Ocean");
+        
         
         //Add rooms to list
         roomList.add(pacific);
@@ -49,6 +51,8 @@ public class Game
         map.setExit("indian", indian);
         map.setExit("arctic", arctic);
         map.setExit("dumpster", dumpster);
+        map.setExit("shop", shop);
+
         
         dumpster.setExit("map", map);
         dumpster.setExit("pacific", pacific);
@@ -56,35 +60,52 @@ public class Game
         dumpster.setExit("indian", indian);
         dumpster.setExit("southern", southern);
         dumpster.setExit("arctic", arctic);
+        dumpster.setExit("shop", shop);
         
+        shop.setExit("map", map);
+        shop.setExit("pacific", pacific);
+        shop.setExit("atlantic", atlantic);
+        shop.setExit("indian", indian);
+        shop.setExit("southern", southern);
+        shop.setExit("arctic", arctic);
+        shop.setExit("dumpster", dumpster;
+
         southern.setExit("map", map);
         southern.setExit("pacific", pacific);
         southern.setExit("atlantic", atlantic);
         southern.setExit("indian", indian);
         southern.setExit("dumpster", dumpster);
+        southern.setExit("shop", shop);
         
         pacific.setExit("map", map);
         pacific.setExit("arctic", arctic);
         pacific.setExit("atlantic", atlantic);
         pacific.setExit("indian", indian);
         pacific.setExit("dumpster", dumpster);
+        pacific.setExit("shop", shop);
 
+        
         atlantic.setExit("map", map);
         atlantic.setExit("arctic", arctic);
         atlantic.setExit("pacific", pacific);
         atlantic.setExit("indian", indian);
         atlantic.setExit("dumpster", dumpster);
+        atlantic.setExit("shop", shop);
 
+        
         indian.setExit("map", map);
         indian.setExit("arctic", arctic);
         indian.setExit("atlantic", atlantic);
         indian.setExit("pacific", pacific);
         indian.setExit("dumpster", dumpster);
+        indian.setExit("shop", shop);
 
         arctic.setExit("map", map);
         arctic.setExit("atlantic", atlantic);
         arctic.setExit("pacific", pacific);
         arctic.setExit("dumpster", dumpster);
+        arctic.setExit("shop", shop);
+
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc=" ITEMS ">
