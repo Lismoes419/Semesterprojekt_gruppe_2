@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Game 
 {
-    //Ny parser og nyt rum (currentRoom = nuværende rum)
-    private Parser parser;
-    private Room currentRoom;
-    private Player player = new Player();
-    private ArrayList<Room> roomList = new ArrayList<>();
-    private ItemDatabase database = new ItemDatabase();
+    //Attributter
+    private Parser parser; //Parser (input)
+    private Room currentRoom; //currentRoom = nuværende rum
+    private Player player = new Player(); //Ny player (med inventory)
+    private ArrayList<Room> roomList = new ArrayList<>(); //Liste af rum
+    private ItemDatabase database = new ItemDatabase(); //Item database
     
     
     //Game metode

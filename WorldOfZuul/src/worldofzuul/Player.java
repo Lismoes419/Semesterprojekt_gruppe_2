@@ -5,6 +5,7 @@ import java.lang.reflect.*;
 public class Player {
     private int points = 0;
     private ArrayList<Item> inventory = new ArrayList<Item>();
+    private ArrayList<Item> equipment = new ArrayList<Item>();
     
 
     public void addItem(Item item)
@@ -103,6 +104,19 @@ public class Player {
         }
         
         return value;
+    }
+    
+    public boolean hasEquipment(Item item)
+    {
+        for(int i = 0; i < equipment.size(); i++)
+        {
+            if(equipment.get(i).equals(item))
+            {
+                return true;
+            }
+        }
+        
+        return false;
     }
     
     public int getPoints()

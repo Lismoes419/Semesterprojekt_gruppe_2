@@ -9,7 +9,10 @@ public class ItemLock extends Lock{
     public void unlock(Player player)
     {
         //Check om vi har det rigtige item
-        //Hvis vi har, unlock
+        if(player.hasEquipment(item))
+        {
+            setLocked(false);
+        }
     }
     @Override
     public String getCondition()

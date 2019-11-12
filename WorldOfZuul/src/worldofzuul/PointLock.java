@@ -18,7 +18,6 @@ public class PointLock extends Lock{
         {
             setLocked(false);
         }
-        //Hvis vi har, unlock
     }
     @Override
     public String getCondition()
