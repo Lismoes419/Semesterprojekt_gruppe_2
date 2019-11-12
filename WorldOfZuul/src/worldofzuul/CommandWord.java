@@ -11,7 +11,8 @@ public enum CommandWord
     PICKUP("pickup"),
     INVENTORY("inventory"),
     ROOMITEMS("items"),
-    SORT("sort");
+    SORT("sort"),
+	BUY("buy");
     
     private String commandString;
     

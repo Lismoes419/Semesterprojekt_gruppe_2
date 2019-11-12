@@ -181,6 +181,9 @@ public class Game
         if (commandWord == CommandWord.HELP) { //hvis vi skriver "help"
             printHelp(); //Kald metode
         }
+        else if (commandWord == CommandWord.BUY) { //hvis vi skriver "buy"
+        	buyItem(command); //Buy item
+        }
         else if (commandWord == CommandWord.GO) { //hvis vi skriver "go"
             goRoom(command); //Kald metode
         }

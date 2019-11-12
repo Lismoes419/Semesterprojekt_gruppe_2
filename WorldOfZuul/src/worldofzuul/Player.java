@@ -17,7 +17,7 @@ public class Player {
             System.out.println("Pick up what?");
             return; //stop metode
         }
-        
+         
         String item = command.getSecondWord();
         
         //Check om item er i rummet
@@ -44,6 +44,18 @@ public class Player {
         
         inventory.add(room.getRoomItem(item));
         room.removeRoomItem(room.getRoomItem(item));
+    }
+    
+    private void buyItem(Command command)
+    {
+    	if(!command.hasSecondWord()) {
+    		System.out.println("Buy what?");
+    		return; //stop metode
+    	}
+    	
+    	String item = command.getSecondWord();
+    	
+    	
     }
     
     public void getAllItems()
