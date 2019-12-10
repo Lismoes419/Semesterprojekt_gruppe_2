@@ -85,7 +85,7 @@ public class Room
     public void setRoomItem(Garbage garbage)
     {
         //Opret nyt objekt
-        Garbage temp = new Garbage(garbage.getName(), garbage.getAmount(), garbage.getIcon());
+        Garbage temp = new Garbage(garbage.getName(), garbage.getAmount(), garbage.getIcon(), garbage.getSortingID());
         //Tilføj til itemList
         itemList.add(temp);
     }

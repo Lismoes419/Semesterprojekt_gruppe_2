@@ -9,13 +9,13 @@ public class ItemDatabase {
     public ArrayList<Equipment> equipment = new ArrayList<Equipment>();
     
     //Garbage
-    public Garbage bottle = new Garbage("bottle", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/bottle.png");
-    public Garbage bag = new Garbage("bag", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/bag.png");
-    public Garbage straw = new Garbage("straw", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/straw.png");
-    public Garbage jug = new Garbage("jug", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/jug.png");
-    public Garbage plastic = new Garbage("plastic", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/plastic.png");
-    public Garbage fishingNet = new Garbage("net", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/fishingNet.png");
-    public Garbage can = new Garbage("can", 1, "/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/can.png");
+    public Garbage bottle = new Garbage("bottle", 1, "./resources/bottle.png", 1);
+    public Garbage bag = new Garbage("bag", 1, "./resources/bag.png", 1);
+    public Garbage straw = new Garbage("straw", 1, "./resources/straw.png", 1);
+    public Garbage jug = new Garbage("jug", 1, "./resources/jug.png", 1);
+    public Garbage plastic = new Garbage("plastic", 1, "./resources/plastic.png", 1);
+    public Garbage fishingNet = new Garbage("net", 1, "./resources/fishingNet.png", 3);
+    public Garbage can = new Garbage("can", 1, "./resources/can.png", 2);
     
     //Equipment
     public Equipment Goggles = new Equipment("goggles", 30, "");
@@ -47,5 +47,17 @@ public class ItemDatabase {
         Random random = new Random();
         
         return garbage.get(random.nextInt(garbage.size()));
+    }
+    
+    public Garbage getItem(String name)
+    {
+        for (int i = 0; i < garbage.size(); i++)
+        {
+            if(garbage.get(i).getName().equals(name))
+            {
+                return garbage.get(i);
+            }
+        }
+        return null;
     }
 }

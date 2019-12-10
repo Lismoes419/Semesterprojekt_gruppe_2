@@ -24,6 +24,8 @@ public class PrimaryController implements Initializable{
     @FXML private ImageView arctic;
     @FXML
     private Button shop;
+    @FXML
+    private Button dumpster;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
@@ -79,7 +81,7 @@ public class PrimaryController implements Initializable{
     
     public void isLocked()
     {
-        File file = new File("/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/locked.png");
+        File file = new File("./resources/locked.png");
         Image locked = new Image(file.toURI().toString());
         
         if(App.getGame().southern.hasLock() && (App.getGame().southern.isLocked()))

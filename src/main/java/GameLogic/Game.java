@@ -112,6 +112,7 @@ public class Game implements GameInterface
         
         // <editor-fold defaultstate="collapsed" desc=" ITEMS ">
         //Tilføj items
+        /*
         //Pacific
         pacific.setRoomItem(database.bottle);
         pacific.setRoomItem(database.bottle);
@@ -144,12 +145,16 @@ public class Game implements GameInterface
         arctic.setRoomItem(database.plastic);
         arctic.setRoomItem(database.bag);
         arctic.setRoomItem(database.bottle);
+        */
         // </editor-fold>
         
         // <editor-fold defaultstate="collapsed" desc=" SHOP ">
+        
+        
         shop.addEquipment(database.Goggles);
         shop.addEquipment(database.Suit);
         shop.addEquipment(database.OxygenTank);
+        
         
         // </editor-fold>
         
@@ -216,7 +221,7 @@ public class Game implements GameInterface
             wantToQuit = quit(command); //boolean = hvad quit(command) returnerer
         }
         else if (commandWord == CommandWord.PICKUP) {
-            player.addItem(command, currentRoom);
+            //player.addItem(command, currentRoom);
         }
         else if(commandWord == CommandWord.INVENTORY) {
             player.getAllItems();
@@ -364,16 +369,6 @@ public class Game implements GameInterface
     @Override
     public void pickup(String name)
     {
-        //Loop gennem database liste
-        for (int i = 0; i < database.garbage.size(); i++)
-        {
-            //Check om navnet matcher
-            if(name.equals(database.garbage.get(i).getName()))
-            {
-                //Tilføj item til player inventory
-                player.addItem(database.garbage.get(i));
-                player.addPoints(1);
-            }
-        }
+        player.addItem(database.getItem(name));
     }
 }

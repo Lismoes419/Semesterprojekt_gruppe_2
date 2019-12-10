@@ -10,41 +10,23 @@ public class Player {
 
     public void addItem(Garbage garbage)
     {
-        inventory.add(garbage);
-    }
-    public void addItem(Command command, Room room)
-    {
-        if(!command.hasSecondWord()) { //Hvis vores kommando IKKE har 2 ord
-            System.out.println("Pick up what?");
-            return; //stop metode
-        }
-         
-        String item = command.getSecondWord();
-        
-        //Check om item er i rummet
-        if(!room.hasRoomItem(item))
-        {
-            System.err.println("Couldn't find this item");
-            return; //Stop metode
-        }
-        
-        System.out.println("You picked up " + item);
+        ItemDatabase database = new ItemDatabase();
         
         //Loop igennem inventory
         for (int i = 0; i < inventory.size(); i++)
         {
             //Check om vi har et lign. objekt
-            if(inventory.get(i).getName().equals(item))
+            if(inventory.get(i).getName().equals(garbage.getName()))
             {
                 //Hvis vi har, tilføj opsamlet amount til amount af item i inv
-                inventory.get(i).addAmount(room.getRoomItem(item).getAmount());
-                room.removeRoomItem(room.getRoomItem(item));
+                inventory.get(i).addAmount(database.getItem(garbage.getName()).getAmount());
                 return; //Stop metode
             }
         }
         
-        inventory.add(room.getRoomItem(item));
-        room.removeRoomItem(room.getRoomItem(item));
+        Garbage item = new Garbage(garbage.getName(), garbage.getAmount(), garbage.getIcon(), garbage.getSortingID());
+        //System.out.println("Created new item: " + item.getName() + "(" + item.getAmount() + ")");
+        inventory.add(item);
     }
     
     public String getAllItems()
@@ -70,11 +52,24 @@ public class Player {
         //System.out.println(returnString);
     }
     
-    public void removeItem(Garbage garbage, Room room)
+    public void removeItem(Garbage garbage)
     {
-        room.setRoomItem(garbage);
         inventory.remove(garbage);
     }
+    
+    public Garbage getItem(String name)
+    {
+        for (int i = 0; i < inventory.size(); i++)
+        {
+            if(inventory.get(i).getName().equals(name))
+            {
+                return inventory.get(i);
+            }
+        }
+        
+        return null;
+    }
+    
     public void emptyInventory()
     {
         inventory.clear();
@@ -89,6 +84,11 @@ public class Player {
         }
         
         return value;
+    }
+    
+    public ArrayList<Garbage> getInventory()
+    {
+        return inventory;
     }
     
     public boolean hasEquipment(Equipment item)
