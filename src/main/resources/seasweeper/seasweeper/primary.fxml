@@ -11,32 +11,32 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/Primary_Background.png" />
+            <Image url="file:./resources/Primary_Background.png" />
          </image>
       </ImageView>
       <ImageView fx:id="indian" fitHeight="113.0" fitWidth="89.0" layoutX="336.0" layoutY="345.0" onMouseClicked="#go" onMouseEntered="#OnMouseOver" onMouseExited="#OnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png" />
+            <Image url="file:./resources/notGlow.png" />
          </image>
       </ImageView>
       <ImageView fx:id="southern" fitHeight="113.0" fitWidth="89.0" layoutX="580.0" layoutY="519.0" onMouseClicked="#go" onMouseEntered="#OnMouseOver" onMouseExited="#OnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png" />
+            <Image url="file:./resources/notGlow.png" />
          </image>
       </ImageView>
       <ImageView fx:id="pacific" fitHeight="113.0" fitWidth="89.0" layoutX="710.0" layoutY="289.0" onMouseClicked="#go" onMouseEntered="#OnMouseOver" onMouseExited="#OnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png" />
+            <Image url="file:./resources/notGlow.png" />
          </image>
       </ImageView>
       <ImageView fx:id="atlantic" fitHeight="113.0" fitWidth="89.0" layoutX="1109.0" layoutY="201.0" onMouseClicked="#go" onMouseEntered="#OnMouseOver" onMouseExited="#OnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png" />
+            <Image url="file:./resources/notGlow.png" />
          </image>
       </ImageView>
       <ImageView fx:id="arctic" fitHeight="113.0" fitWidth="89.0" layoutX="625.0" layoutY="9.0" onMouseClicked="#go" onMouseEntered="#OnMouseOver" onMouseExited="#OnMouseExit" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png" />
+            <Image url="file:./resources/notGlow.png" />
          </image>
       </ImageView>
       <Line endX="203.841796875" endY="103.615966796875" layoutX="386.0" layoutY="452.0" startX="4.70977783203125" startY="-37.43585205078125" strokeWidth="4.0" />
