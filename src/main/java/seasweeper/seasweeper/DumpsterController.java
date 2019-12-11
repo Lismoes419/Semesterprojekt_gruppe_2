@@ -18,6 +18,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -40,6 +41,7 @@ public class DumpsterController implements Initializable {
     @FXML private AnchorPane inventory;
     @FXML private GridPane gridPane;
     @FXML private Button primary;
+    @FXML private TextField pointsLabel;
     
     /**
      * Initializes the controller class.
@@ -48,6 +50,8 @@ public class DumpsterController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         displayInventory();
+        
+        updatePoints();
     }
     
     private void selectItem(MouseEvent event)
@@ -82,12 +86,14 @@ public class DumpsterController implements Initializable {
         ItemDatabase database = new ItemDatabase();
         Garbage item = App.getGame().getPlayer().getItem(selection.getId());
         //Garbage item = database.getItem(selection.getId());
+        //Dumpster ID
+        String[] parts = image.getId().split("_");
+        int dumpsterID = Integer.parseInt(parts[1]);
         
         //Check if right
-        if(item.getSortingID() == item.getSortingID())
+        if(item.getSortingID() == dumpsterID)
         {
             //We did it bois
-            //System.out.println("+" + item.getAmount() +  "point(s)");
             App.getGame().getPlayer().addPoints(item.getAmount());
         } else{
             //
@@ -100,6 +106,7 @@ public class DumpsterController implements Initializable {
         selected = false;
         
         App.getGame().getPlayer().removeItem(item);
+        updatePoints();
     }
     
     @FXML
@@ -172,5 +179,11 @@ public class DumpsterController implements Initializable {
         } catch (IOException e){
             System.out.println("No such room");
         }
+    }
+    
+    
+    private void updatePoints()
+    {
+        pointsLabel.setText("Points: " + App.getGame().getPlayer().getPoints());
     }
 }

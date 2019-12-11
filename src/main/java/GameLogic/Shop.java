@@ -80,20 +80,12 @@ public class Shop extends Room{
         {
             if(equipment.equals(database.equipment.get(i).getName()))
             {
-                if(player.getPoints() >= database.equipment.get(i).getPrice() && !player.hasEquipment(database.equipment.get(i)))
+                if(!player.hasEquipment(database.equipment.get(i)) && player.getPoints() >= database.equipment.get(i).getPrice())
                 {
-                    //Buy equipment
-                    //Print
-                    System.out.println("You bought " + equipment + " for " + list.get(i).getPrice() + " points!");
-                    //Subtrackt points from player
-                    player.removePoints(list.get(i).getPrice());
-                    //Add to players equipment list
-                    player.addEquipment(list.get(i));
-                    return; //Stop metode
-                    
+                    player.removePoints(database.equipment.get(i).getPrice());
+                    player.addEquipment(database.equipment.get(i));
                 } else{
-                    System.out.println("Sorry, you do not have enough points to buy this item");
-                    return; //Stop metode
+                    System.out.println("Not enough points");
                 }
             }
         }

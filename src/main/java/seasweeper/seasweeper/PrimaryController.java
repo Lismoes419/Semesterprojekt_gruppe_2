@@ -11,9 +11,11 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 
 public class PrimaryController implements Initializable{
 
@@ -22,16 +24,23 @@ public class PrimaryController implements Initializable{
     @FXML private ImageView southern;
     @FXML private ImageView atlantic;
     @FXML private ImageView arctic;
-    @FXML
-    private Button shop;
-    @FXML
-    private Button dumpster;
+    @FXML private Button shop;
+    @FXML private Button dumpster;
+    @FXML private Button mainMenu;
+    @FXML private TextField pointsLabel;
+    
+    @FXML private ImageView indianReq;
+    @FXML private ImageView atlanticReq;
+    @FXML private Text arcticReq;
+    @FXML private Text pacificReq;
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
     {
         App.getGame().unlockRooms();
         isLocked();
+        
+        pointsLabel.setText("Points: " + App.getGame().getPlayer().getPoints());
     }
     
     private void getInventory()
@@ -48,20 +57,106 @@ public class PrimaryController implements Initializable{
     private void OnMouseOver(MouseEvent event)
     {
         ImageView image = (ImageView) event.getSource();
-        File file = new File("/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/glow.png");
-        Image lightImage = new Image(file.toURI().toString());
+        File file = new File("./resources/glow.png");
         
-        image.setImage(lightImage);
+        if(image.getId().equals("southern"))
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("indian") && App.getGame().indian.isLocked())
+        {
+            //Do something
+            indianReq.setVisible(true);
+            indianReq.setDisable(false);
+        } else if(image.getId().equals("indian") && !App.getGame().indian.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("pacific") && App.getGame().pacific.isLocked())
+        {
+            //Do something
+            pacificReq.setVisible(true);
+            pacificReq.setDisable(false);
+        } else if(image.getId().equals("pacific") && !App.getGame().pacific.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("atlantic") && App.getGame().atlantic.isLocked())
+        {
+            //Do something
+            atlanticReq.setVisible(true);
+            atlanticReq.setDisable(false);
+        } else if(image.getId().equals("atlantic") && !App.getGame().atlantic.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("arctic") && App.getGame().arctic.isLocked())
+        {
+            //Do something
+            arcticReq.setVisible(true);
+            arcticReq.setDisable(false);
+        } else if(image.getId().equals("arctic") && !App.getGame().arctic.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
     }
 
     @FXML
     private void OnMouseExit(MouseEvent event)
     {
         ImageView image = (ImageView) event.getSource();
-        File file = new File("/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/notGlow.png");
-        Image lightImage = new Image(file.toURI().toString());
+        File file = new File("./resources/notGlow.png");
         
-        image.setImage(lightImage);
+        if(image.getId().equals("southern"))
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("indian") && App.getGame().indian.isLocked())
+        {
+            //Do something
+            indianReq.setVisible(false);
+            indianReq.setDisable(true);
+        } else if(image.getId().equals("indian") && !App.getGame().indian.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("pacific") && App.getGame().pacific.isLocked())
+        {
+            //Do something
+            pacificReq.setVisible(false);
+            pacificReq.setDisable(true);
+        } else if(image.getId().equals("pacific") && !App.getGame().pacific.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("atlantic") && App.getGame().atlantic.isLocked())
+        {
+            //Do something
+            atlanticReq.setVisible(false);
+            atlanticReq.setDisable(true);
+        } else if(image.getId().equals("atlantic") && !App.getGame().atlantic.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
+        if(image.getId().equals("arctic") && App.getGame().arctic.isLocked())
+        {
+            //Do something
+            arcticReq.setVisible(false);
+            arcticReq.setDisable(true);
+        } else if(image.getId().equals("arctic") && !App.getGame().arctic.isLocked())
+        {
+            Image lightImage = new Image(file.toURI().toString());
+            image.setImage(lightImage);
+        }
     }
 
     @FXML
@@ -70,12 +165,55 @@ public class PrimaryController implements Initializable{
         ImageView image = (ImageView) event.getSource();
         String direction = image.getId();
         
-        App.getGame().goRoom(direction);
-        
-        try{
-        App.setRoot(direction);
-        } catch (IOException e){
-            System.out.println("No such room");
+        if(direction.equals("southern"))
+        {
+            App.getGame().goRoom(direction);
+            
+            try{
+                App.setRoot(direction);
+            } catch (IOException e){
+                System.out.println("No such room");
+            }
+        }
+        if(direction.equals("indian") && !App.getGame().indian.isLocked())
+        {
+            App.getGame().goRoom(direction);
+            
+            try{
+                App.setRoot(direction);
+            } catch (IOException e){
+                System.out.println("No such room");
+            }
+        }
+        if(direction.equals("pacific") && !App.getGame().pacific.isLocked())
+        {
+            App.getGame().goRoom(direction);
+            
+            try{
+                App.setRoot(direction);
+            } catch (IOException e){
+                System.out.println("No such room");
+            }
+        }
+        if(direction.equals("atlantic") && !App.getGame().atlantic.isLocked())
+        {
+            App.getGame().goRoom(direction);
+            
+            try{
+                App.setRoot(direction);
+            } catch (IOException e){
+                System.out.println("No such room");
+            }
+        }
+        if(direction.equals("arctic") && !App.getGame().arctic.isLocked())
+        {
+            App.getGame().goRoom(direction);
+            
+            try{
+                App.setRoot(direction);
+            } catch (IOException e){
+                System.out.println("No such room");
+            }
         }
     }
     
@@ -87,27 +225,22 @@ public class PrimaryController implements Initializable{
         if(App.getGame().southern.hasLock() && (App.getGame().southern.isLocked()))
         {
             southern.setImage(locked);//Change image
-            southern.setMouseTransparent(false);//Disable mouse transparency
         }
         if(App.getGame().indian.hasLock() && App.getGame().indian.isLocked())
         {
             indian.setImage(locked);//Change image
-            indian.setMouseTransparent(true);//Disable mouse transparency
         }
         if(App.getGame().pacific.isLocked())
         {
             pacific.setImage(locked);//Change image
-            pacific.setMouseTransparent(true);//Disable mouse transparency
         }
         if(App.getGame().atlantic.isLocked())
         {
             atlantic.setImage(locked);//Change image
-            atlantic.setMouseTransparent(true);//Disable mouse transparency
         }
         if(App.getGame().arctic.isLocked())
         {
             arctic.setImage(locked);//Change image
-            arctic.setMouseTransparent(true);//Disable mouse transparency
         }
     }
 

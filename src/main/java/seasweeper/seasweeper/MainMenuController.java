@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
 import javafx.scene.control.Button;
+import javafx.scene.layout.Pane;
 /**
  * FXML Controller class
  *
@@ -21,16 +22,16 @@ import javafx.scene.control.Button;
 public class MainMenuController implements Initializable {
 
 
-    @FXML
-    private Button quit;
+    @FXML private Button quit;
+    @FXML private Pane helpPane;
+    
+    private boolean helpBool = false;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-        //System.out.println(new File(".").getAbsolutePath());
     }
     
     @FXML
@@ -43,5 +44,14 @@ public class MainMenuController implements Initializable {
     public void quit()
     {
         App.getGame().quit();
+    }
+    
+    @FXML
+    public void help()
+    {
+        helpBool = !helpBool;
+        
+        //Opacity
+        helpPane.setVisible(helpBool);
     }
 }

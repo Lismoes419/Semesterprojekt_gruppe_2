@@ -12,6 +12,7 @@ GameLogic/CommandWord.class
 seasweeper/seasweeper/Start.class
 seasweeper/seasweeper/DumpsterController$1.class
 GameLogic/CommandWords.class
+seasweeper/seasweeper/IndianController.class
 GameLogic/Player.class
 seasweeper/seasweeper/ShopController.class
 seasweeper/seasweeper/DumpsterController.class
@@ -21,7 +22,9 @@ GameLogic/Garbage.class
 seasweeper/seasweeper/PacificController.class
 GameLogic/Room.class
 GameLogic/Command.class
+seasweeper/seasweeper/ArcticController.class
 GameLogic/Shop.class
+seasweeper/seasweeper/AtlanticController.class
 seasweeper/seasweeper/App.class
 GameLogic/ItemLock.class
 GameLogic/Equipment.class

@@ -20,6 +20,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
 
 
@@ -47,8 +48,8 @@ public class PacificController implements Initializable {
     @FXML private ImageView Item_20;
     @FXML private AnchorPane anchorPane;
     private ArrayList<ImageView> items = new ArrayList<ImageView>();
-    @FXML
-    private Button primary;
+    @FXML private Button primary;
+    @FXML private Pane pacificComplete;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -153,9 +154,9 @@ public class PacificController implements Initializable {
     {
         if(items.size() == 0)
         {
-            System.out.println("WIN");
-            primary.setOpacity(100); //Set Button to visible
-            primary.setDisable(false);
+            //System.out.println("WIN");
+            pacificComplete.setDisable(false);
+            pacificComplete.setVisible(true);
         }
     }
 }

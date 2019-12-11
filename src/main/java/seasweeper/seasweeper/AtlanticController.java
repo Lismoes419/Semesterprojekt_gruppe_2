@@ -11,16 +11,13 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
 
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -30,9 +27,10 @@ import javafx.scene.layout.Pane;
  *
  * @author jakobrasmussen
  */
-public class SouthernController implements Initializable {
+public class AtlanticController implements Initializable {
 
 
+    @FXML private AnchorPane anchorPane;
     @FXML private ImageView Item_01;
     @FXML private ImageView Item_02;
     @FXML private ImageView Item_03;
@@ -53,14 +51,14 @@ public class SouthernController implements Initializable {
     @FXML private ImageView Item_18;
     @FXML private ImageView Item_19;
     @FXML private ImageView Item_20;
-    
+    @FXML private Button primary;
     
     private ArrayList<ImageView> items = new ArrayList<ImageView>();
-    
-    @FXML private Button primary;
-    @FXML private AnchorPane anchorPane;
-    @FXML private Pane southernComplete;
-    
+    @FXML
+    private Pane atlanticComplete;
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -85,8 +83,44 @@ public class SouthernController implements Initializable {
         items.add(Item_19);
         items.add(Item_20);
         
+        
         instantiate();
     }    
+    
+    @FXML
+    private void pickup(MouseEvent event) {
+        ImageView image = (ImageView)event.getSource(); //Get source (which image was clicked?)
+        String itemName = image.getId(); //Save id
+        
+        App.getGame().pickup(itemName); //Add Item to inventory
+        anchorPane.getChildren().remove(image); //Remove image
+        
+        //Remove item from list
+        for (int i = 0; i < items.size(); i++)
+        {
+            if(items.get(i).equals(image))
+            {
+                items.remove(i);
+            }
+        }
+        
+        //Check if room is empty
+        isEmpty();
+    }
+
+    @FXML
+    private void go(ActionEvent event) {
+        Button btn = (Button) event.getSource();
+        String direction = btn.getId();
+        
+        App.getGame().goRoom(direction);
+        
+        try{
+        App.setRoot(direction);
+        } catch (IOException e){
+            System.out.println("No such room");
+        }
+    }
     
     private void instantiate()
     {
@@ -95,8 +129,8 @@ public class SouthernController implements Initializable {
         //Loop op til amt
         for (int i = 0; i < items.size(); i++)
         {
-            double x = 50 + (1100 - 50) * Math.random();
-            double y = 750 + (950 - 750) * Math.random();
+            double x = 50 + (900 - 50) * Math.random();
+            double y = 400 + (720 - 400) * Math.random();
             //System.out.println(x + "," + y);
             //Set Position
             items.get(i).setX(x);
@@ -118,43 +152,10 @@ public class SouthernController implements Initializable {
         if(items.size() == 0)
         {
             System.out.println("WIN");
-            southernComplete.setDisable(false);
-            southernComplete.setVisible(true);
+            atlanticComplete.setDisable(false);
+            atlanticComplete.setVisible(true);
+            
+            App.getGame().arctic.getLock().setLocked(false);
         }
-    }
-    
-    @FXML
-    private void go(ActionEvent event) {
-        Button btn = (Button) event.getSource();
-        String direction = btn.getId();
-        
-        App.getGame().goRoom(direction);
-        
-        try{
-        App.setRoot(direction);
-        } catch (IOException e){
-            System.out.println("No such room");
-        }
-    }
-    
-    @FXML
-    private void pickup(MouseEvent event) {
-        ImageView image = (ImageView)event.getSource(); //Get source (which image was clicked?)
-        String itemName = image.getId(); //Save id
-        
-        App.getGame().pickup(itemName); //Add Item to inventory
-        anchorPane.getChildren().remove(image); //Remove image
-        
-        //Remove item from list
-        for (int i = 0; i < items.size(); i++)
-        {
-            if(items.get(i).equals(image))
-            {
-                items.remove(i);
-            }
-        }
-        
-        //Check if room is empty
-        isEmpty();
     }
 }
