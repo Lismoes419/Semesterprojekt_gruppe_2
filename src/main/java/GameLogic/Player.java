@@ -5,7 +5,7 @@ import java.lang.reflect.*;
 public class Player {
     private int points = 0;
     private ArrayList<Garbage> inventory = new ArrayList<Garbage>();
-    private ArrayList<Item> equipment = new ArrayList<Item>();
+    private ArrayList<Equipment> equipment = new ArrayList<Equipment>();
     
 
     public void addItem(Garbage garbage)

@@ -1,4 +1,6 @@
+/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/AtlanticController.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/Presentation/GameInterface.java
+/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/ArcticController.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/GameLogic/Command.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/GameLogic/Player.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/PrimaryController.java
@@ -9,6 +11,7 @@
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/App.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/SouthernController.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/GameLogic/Shop.java
+/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/seasweeper/seasweeper/IndianController.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/GameLogic/Equipment.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/module-info.java
 /Users/jakobrasmussen/NetBeansProjects/SeaSweeper/src/main/java/GameLogic/ItemLock.java

@@ -33,8 +33,8 @@ public class Game implements GameInterface
         shop = new Shop("in the shop. Here you can buy equipment");
         southern = new Room("in the Southern Ocean");
         indian = new Room("in the Indian Ocean", new ItemLock(database.Goggles));
-        pacific = new Room("in the Pacific Ocean", new PointLock(20));
-        atlantic = new Room("in the Atlantic Ocean", new PointLock(60));
+        pacific = new Room("in the Pacific Ocean", new PointLock(25));
+        atlantic = new Room("in the Atlantic Ocean", new ItemLock(database.OxygenTank));
         arctic = new Room("in the Arctic Ocean", new PointLock(80));
         
         

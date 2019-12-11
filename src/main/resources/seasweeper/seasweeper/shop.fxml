@@ -20,7 +20,7 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Pane layoutX="50.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
+      <Pane layoutX="1000.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
          <children>
             <ImageView fx:id="suit" fitHeight="350.0" fitWidth="250.0" onMouseClicked="#buy" pickOnBounds="true">
                <image>
@@ -34,21 +34,21 @@
             </TextField>
          </children>
       </Pane>
-      <Pane layoutX="325.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
+      <Pane layoutX="360.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
          <children>
             <ImageView fx:id="oxygenTank" fitHeight="350.0" fitWidth="250.0" onMouseClicked="#buy" pickOnBounds="true">
                <image>
                   <Image url="file:./resources/Shop_oxygenTank.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="tankText" alignment="CENTER" editable="false" layoutY="350.0" prefHeight="50.0" prefWidth="250.0" text="Price: 80">
+            <TextField fx:id="tankText" alignment="CENTER" editable="false" layoutY="350.0" prefHeight="50.0" prefWidth="250.0" text="Price: 40">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
          </children>
       </Pane>
-      <Pane layoutX="600.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
+      <Pane layoutX="680.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
          <children>
             <ImageView fx:id="fins" fitHeight="350.0" fitWidth="250.0" onMouseClicked="#buy" pickOnBounds="true">
                <image>
@@ -62,49 +62,20 @@
             </TextField>
          </children>
       </Pane>
-      <Pane layoutX="899.0" layoutY="149.0" prefHeight="176.0" prefWidth="151.0">
+      <Pane layoutX="40.0" layoutY="150.0" prefHeight="400.0" prefWidth="250.0">
          <children>
-            <ImageView fx:id="goggles" fitHeight="125.0" fitWidth="150.0" onMouseClicked="#buy" pickOnBounds="true">
+            <ImageView fx:id="goggles" fitHeight="350.0" fitWidth="250.0" onMouseClicked="#buy" pickOnBounds="true">
                <image>
-                  <Image url="file:./Shop_goggles.jpg" />
+                  <Image url="file:./resources/Shop_goggles.jpg" />
                </image>
             </ImageView>
-            <TextField fx:id="gogglesText" alignment="CENTER" editable="false" layoutY="125.0" prefHeight="50.0" prefWidth="150.0" text="Price: 30">
+            <TextField fx:id="gogglesText" alignment="CENTER" editable="false" layoutY="350.0" prefHeight="50.0" prefWidth="250.0" text="Price: 15">
                <font>
                   <Font size="20.0" />
                </font>
             </TextField>
          </children>
       </Pane>
-      <Pane layoutX="1075.0" layoutY="150.0" prefHeight="176.0" prefWidth="151.0">
-         <children>
-            <ImageView fitHeight="125.0" fitWidth="150.0" pickOnBounds="true" />
-            <TextField alignment="CENTER" editable="false" layoutY="125.0" prefHeight="50.0" prefWidth="150.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-         </children>
-      </Pane>
-      <Pane layoutX="900.0" layoutY="375.0" prefHeight="176.0" prefWidth="151.0">
-         <children>
-            <ImageView fitHeight="125.0" fitWidth="150.0" pickOnBounds="true" />
-            <TextField alignment="CENTER" editable="false" layoutY="125.0" prefHeight="50.0" prefWidth="150.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-         </children>
-      </Pane>
-      <Pane layoutX="1075.0" layoutY="375.0" prefHeight="176.0" prefWidth="151.0">
-         <children>
-            <ImageView fitHeight="125.0" fitWidth="150.0" pickOnBounds="true" />
-            <TextField alignment="CENTER" editable="false" layoutY="125.0" prefHeight="50.0" prefWidth="150.0">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </TextField>
-         </children>
-      </Pane>
+      <TextField fx:id="pointsLabel" editable="false" layoutX="1150.0" layoutY="30.0" prefHeight="27.0" prefWidth="103.0" />
    </children>
 </AnchorPane>

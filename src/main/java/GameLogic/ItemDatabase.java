@@ -18,9 +18,9 @@ public class ItemDatabase {
     public Garbage can = new Garbage("can", 1, "./resources/can.png", 2);
     
     //Equipment
-    public Equipment Goggles = new Equipment("goggles", 30, "");
+    public Equipment Goggles = new Equipment("goggles", 15, "");
     public Equipment Suit = new Equipment("suit", 100, "");
-    public Equipment OxygenTank = new Equipment("oxygenTank", 80, "");
+    public Equipment OxygenTank = new Equipment("oxygenTank", 40, "");
     public Equipment Fins = new Equipment("fins", 50, "");
     
     public ItemDatabase()

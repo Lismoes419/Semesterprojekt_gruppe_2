@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="seasweeper.seasweeper.PacificController">
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/Pacific_Background.jpg" />
+            <Image url="file:./resources/Pacific_Background.jpg" />
          </image>
       </ImageView>
       <ImageView fx:id="Item_01" fitHeight="75.0" fitWidth="75.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
@@ -33,10 +35,19 @@
       <ImageView fx:id="Item_18" fitHeight="75.0" fitWidth="75.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="Item_19" fitHeight="75.0" fitWidth="75.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="Item_20" fitHeight="75.0" fitWidth="75.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="primary" disable="true" layoutX="59.0" layoutY="579.0" mnemonicParsing="false" onAction="#go" opacity="0.0" prefHeight="90.0" prefWidth="218.0" text="Back">
-         <font>
-            <Font size="42.0" />
-         </font>
-      </Button>
+      <Pane fx:id="pacificComplete" disable="true" layoutX="-12.0" layoutY="-5.0" prefHeight="720.0" prefWidth="1280.0" visible="false">
+         <children>
+            <TextArea layoutX="179.0" layoutY="95.0" prefHeight="99.0" prefWidth="943.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Nice one!&#10;Did you know that, more than 1.1 million animals die each year because of plastic pollution?">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextArea>
+            <Button fx:id="primary" layoutX="79.0" layoutY="576.0" mnemonicParsing="false" onAction="#go" prefHeight="74.0" prefWidth="177.0" text="Back">
+               <font>
+                  <Font size="33.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

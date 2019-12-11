@@ -30,12 +30,13 @@ public class ShopController implements Initializable {
     @FXML private ImageView oxygenTank;
     @FXML private ImageView suit;
     @FXML private ImageView goggles;
+    @FXML private ImageView fins;
     @FXML private Button primary;
     @FXML private TextField suitText;
     @FXML private TextField tankText;
-    @FXML private ImageView fins;
     @FXML private TextField finsText;
     @FXML private TextField gogglesText;
+    @FXML private TextField pointsLabel;
     /**
      * Initializes the controller class.
      */
@@ -43,6 +44,7 @@ public class ShopController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         hasEquipment();
+        updatePoints();
     }    
     
     @FXML
@@ -69,6 +71,7 @@ public class ShopController implements Initializable {
         
         //Update
         hasEquipment();
+        updatePoints();
     }
     
     
@@ -96,5 +99,10 @@ public class ShopController implements Initializable {
             //Change price to owned
             gogglesText.setText("Owned");
         }
+    }
+    
+    private void updatePoints()
+    {
+        pointsLabel.setText("Points: " + App.getGame().getPlayer().getPoints());
     }
 }
