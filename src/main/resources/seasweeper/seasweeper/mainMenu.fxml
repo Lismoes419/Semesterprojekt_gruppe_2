@@ -38,7 +38,7 @@
          <children>
             <TextArea editable="false" prefHeight="580.0" prefWidth="500.0" text="Welcome to SeaSweeper!&#10;&#10;Play our exiting game and save our&#10;oceans by collecting the wasted  plastic.&#10;&#10;&#10;Instructions:&#10;In each room you can click and collect&#10;trash, which you will then sort inside&#10;the dumpster room in order to get points.&#10;Each piece you sort correctly will grant&#10;you 1 point.&#10;You can hover over locked rooms to see&#10;the requirements to unlock the room.&#10;&#10;Good luck!">
                <font>
-                  <Font size="27.0" />
+                  <Font size="20.0" />
                </font></TextArea>
          </children>
       </Pane>

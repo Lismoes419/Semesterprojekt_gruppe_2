@@ -50,21 +50,21 @@
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="dumpster" layoutX="1154.0" layoutY="14.0" mnemonicParsing="false" onAction="#goButton" prefHeight="50.0" prefWidth="50.0" text="dumpster" textFill="#44d302">
+      <Button fx:id="dumpster" layoutX="1154.0" layoutY="14.0" mnemonicParsing="false" onAction="#goButton" prefHeight="50.0" prefWidth="50.0" textFill="#44d302">
          <font>
             <Font size="25.0" />
          </font>
       </Button>
-      <Button fx:id="mainMenu" layoutX="25.0" layoutY="625.0" mnemonicParsing="false" onAction="#goButton" prefHeight="75.0" prefWidth="200.0" text="Main Menu" />
+      <Button layoutX="25.0" layoutY="625.0" mnemonicParsing="false" onAction="#mainMenu" prefHeight="75.0" prefWidth="200.0" text="Main Menu" />
       <TextField fx:id="pointsLabel" editable="false" layoutX="1039.0" layoutY="26.0" prefHeight="27.0" prefWidth="103.0" />
       <ImageView fx:id="indianReq" disable="true" fitHeight="75.0" fitWidth="75.0" layoutX="391.0" layoutY="307.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/icon_goggles.png" />
+            <Image url="file:./resources/icon_goggles.png" />
          </image>
       </ImageView>
       <ImageView fx:id="atlanticReq" disable="true" fitHeight="75.0" fitWidth="75.0" layoutX="1171.0" layoutY="148.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/icon_oxygenTank.png" />
+            <Image url="file:./resources/icon_oxygenTank.png" />
          </image>
       </ImageView>
       <Text fx:id="pacificReq" disable="true" layoutX="793.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" text="25" visible="false">
@@ -77,5 +77,10 @@
             <Font size="23.0" />
          </font>
       </Text>
+      <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1154.0" layoutY="14.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="file:./resources/icon_dumpster.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

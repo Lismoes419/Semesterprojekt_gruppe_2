@@ -42,7 +42,7 @@
                   <Font size="42.0" />
                </font>
             </Button>
-            <TextArea layoutX="213.0" layoutY="11.0" prefHeight="101.0" prefWidth="861.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Good job! &#10;Did you know that, every year our oceans are polluted with 8 million tons of plastic?&#10;">
+            <TextArea editable="false" layoutY="11.0" prefHeight="101.0" prefWidth="1281.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;Good job! &#10;Did you know that, every year our oceans are polluted with 8 million tons of plastic?&#10;">
                <font>
                   <Font size="24.0" />
                </font>

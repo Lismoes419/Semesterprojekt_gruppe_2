@@ -1,12 +1,11 @@
 package seasweeper.seasweeper;
 
+
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-import GameLogic.Command;
-import GameLogic.CommandWord;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +15,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
+
 
 public class PrimaryController implements Initializable{
 
@@ -41,11 +41,6 @@ public class PrimaryController implements Initializable{
         isLocked();
         
         pointsLabel.setText("Points: " + App.getGame().getPlayer().getPoints());
-    }
-    
-    private void getInventory()
-    {
-        App.getGame().getPlayer().getAllItems();
     }
     
     private void quit()
@@ -254,6 +249,16 @@ public class PrimaryController implements Initializable{
         try{
         App.setRoot(direction);
         } catch (IOException e){
+            System.out.println("No such room");
+        }
+    }
+    
+    @FXML
+    private void mainMenu()
+    {
+        try{
+            App.setRoot("mainMenu");
+        } catch(IOException e){
             System.out.println("No such room");
         }
     }

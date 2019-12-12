@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seasweeper.seasweeper;
+
 
 import GameLogic.Garbage;
 import GameLogic.ItemDatabase;
@@ -11,27 +7,20 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.ResourceBundle;
-import java.util.Set;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.image.Image;
 
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-/**
- * FXML Controller class
- *
- * @author jakobrasmussen
- */
-public class SouthernController implements Initializable {
 
+
+public class SouthernController implements Initializable {
 
     @FXML private ImageView Item_01;
     @FXML private ImageView Item_02;
@@ -54,12 +43,12 @@ public class SouthernController implements Initializable {
     @FXML private ImageView Item_19;
     @FXML private ImageView Item_20;
     
-    
     private ArrayList<ImageView> items = new ArrayList<ImageView>();
     
     @FXML private Button primary;
     @FXML private AnchorPane anchorPane;
     @FXML private Pane southernComplete;
+    
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -97,7 +86,6 @@ public class SouthernController implements Initializable {
         {
             double x = 50 + (1100 - 50) * Math.random();
             double y = 750 + (950 - 750) * Math.random();
-            //System.out.println(x + "," + y);
             //Set Position
             items.get(i).setX(x);
             items.get(i).setY(y);
@@ -108,8 +96,6 @@ public class SouthernController implements Initializable {
             items.get(i).setImage(icon);
             //Set name
             items.get(i).setId(randomItem.getName());
-            
-            //System.out.println("Item_" + i + " is at (" + x + "," + y + ")");
         }
     }
     
@@ -117,7 +103,6 @@ public class SouthernController implements Initializable {
     {
         if(items.size() == 0)
         {
-            System.out.println("WIN");
             southernComplete.setDisable(false);
             southernComplete.setVisible(true);
         }

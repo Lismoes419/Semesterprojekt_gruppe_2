@@ -39,7 +39,6 @@ public class ItemDatabase {
         equipment.add(Suit);
         equipment.add(OxygenTank);
         equipment.add(Fins);
-        
     }
     
     public Garbage randomItem()

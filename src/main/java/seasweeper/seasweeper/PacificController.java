@@ -6,22 +6,16 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.shape.Circle;
 
 
 public class PacificController implements Initializable {
@@ -119,11 +113,6 @@ public class PacificController implements Initializable {
         }
     }
     
-    private void getInventory()
-    {
-        App.getGame().getPlayer().getAllItems();
-    }
-    
     private void instantiate()
     {
         ItemDatabase database = new ItemDatabase();
@@ -133,7 +122,6 @@ public class PacificController implements Initializable {
         {
             double x = 50 + (900 - 50) * Math.random();
             double y = 400 + (720 - 400) * Math.random();
-            //System.out.println(x + "," + y);
             //Set Position
             items.get(i).setX(x);
             items.get(i).setY(y);
@@ -144,8 +132,6 @@ public class PacificController implements Initializable {
             items.get(i).setImage(icon);
             //Set name
             items.get(i).setId(randomItem.getName());
-            
-            //System.out.println("Item_" + i + " is at (" + x + "," + y + ")");
         }
     }
     
@@ -154,7 +140,6 @@ public class PacificController implements Initializable {
     {
         if(items.size() == 0)
         {
-            //System.out.println("WIN");
             pacificComplete.setDisable(false);
             pacificComplete.setVisible(true);
         }
