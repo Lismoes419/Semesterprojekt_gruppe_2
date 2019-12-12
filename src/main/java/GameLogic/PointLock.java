@@ -17,15 +17,7 @@ public class PointLock extends Lock{
         if(player.getPoints() >= amt)
         {
             setLocked(false);
-            
-            //Graphics
-            
         }
-    }
-    @Override
-    public String getCondition()
-    {
-        return String.valueOf(amt) + " points";
     }
     
     public int getAmt()

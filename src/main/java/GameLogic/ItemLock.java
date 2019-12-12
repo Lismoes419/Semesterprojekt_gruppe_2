@@ -20,11 +20,6 @@ public class ItemLock extends Lock{
             setLocked(false);
         }
     }
-    @Override
-    public String getCondition()
-    {
-        return equipment.getName();
-    }
     public Equipment getConditionObject()
     {
         return equipment;

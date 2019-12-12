@@ -1,6 +1,5 @@
 package seasweeper.seasweeper;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -42,11 +41,6 @@ public class ArcticController implements Initializable {
     @FXML private Label label8;
 
     private boolean q1, q2, q3, q4;
-    @FXML private ToggleGroup spørgsmål1;
-    @FXML private ToggleGroup spørgsmål2;
-    @FXML private ToggleGroup spørgsmål3;
-    @FXML private ToggleGroup spørgsmål4;
-    
     @FXML private Pane winner;
     
     @FXML public void correctAnswer() {
@@ -122,14 +116,14 @@ public class ArcticController implements Initializable {
     }
     
     @Override
-    public void initialize(URL url, ResourceBundle rb) {
+    public void initialize(URL url, ResourceBundle rb)
+    {
     
     }
     private void checkAnswers()
     {
         if(q1 && q2 && q3 && q4)
         {
-            System.out.println("Winner Winner Chicken Dinner");
             winner.setDisable(false);
             winner.setVisible(true);
         }

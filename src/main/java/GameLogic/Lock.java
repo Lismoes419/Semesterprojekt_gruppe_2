@@ -19,5 +19,4 @@ public abstract class Lock {
     
     //Unlock metode
     public abstract void unlock(Player player);
-    public abstract String getCondition();
 }

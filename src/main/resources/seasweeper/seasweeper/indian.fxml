@@ -12,7 +12,7 @@
    <children>
       <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
-            <Image url="file:/Users/jakobrasmussen/NetBeansProjects/SeaSweeper/resources/Indian_Background.jpg" />
+            <Image url="file:./resources/Indian_Background.jpg" />
          </image></ImageView>
       <ImageView fx:id="Item_01" fitHeight="100.0" fitWidth="100.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="Item_02" fitHeight="100.0" fitWidth="100.0" layoutY="-300.0" onMouseClicked="#pickup" pickOnBounds="true" preserveRatio="true" />
@@ -41,7 +41,7 @@
                   <Font size="50.0" />
                </font>
             </Button>
-            <TextArea layoutX="344.0" layoutY="79.0" prefHeight="81.0" prefWidth="672.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;Well done!&#10;Did you know that, about 5.2 trillion microplastic is in our ocean?">
+            <TextArea editable="false" layoutX="2.0" layoutY="25.0" prefHeight="81.0" prefWidth="1274.0" text="&#9;&#9;&#9;&#9;&#9;&#9;&#9;Well done!&#10;Did you know that, about 5.2 trillion microplastic is in our ocean?">
                <font>
                   <Font size="24.0" />
                </font>

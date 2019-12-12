@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seasweeper.seasweeper;
 
 import GameLogic.Garbage;
@@ -22,13 +17,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-/**
- * FXML Controller class
- *
- * @author jakobrasmussen
- */
-public class AtlanticController implements Initializable {
 
+public class AtlanticController implements Initializable {
 
     @FXML private AnchorPane anchorPane;
     @FXML private ImageView Item_01;
@@ -56,9 +46,8 @@ public class AtlanticController implements Initializable {
     private ArrayList<ImageView> items = new ArrayList<ImageView>();
     @FXML
     private Pane atlanticComplete;
-    /**
-     * Initializes the controller class.
-     */
+    
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -82,7 +71,6 @@ public class AtlanticController implements Initializable {
         items.add(Item_18);
         items.add(Item_19);
         items.add(Item_20);
-        
         
         instantiate();
     }    
@@ -131,7 +119,6 @@ public class AtlanticController implements Initializable {
         {
             double x = 50 + (900 - 50) * Math.random();
             double y = 400 + (720 - 400) * Math.random();
-            //System.out.println(x + "," + y);
             //Set Position
             items.get(i).setX(x);
             items.get(i).setY(y);
@@ -142,8 +129,6 @@ public class AtlanticController implements Initializable {
             items.get(i).setImage(icon);
             //Set name
             items.get(i).setId(randomItem.getName());
-            
-            //System.out.println("Item_" + i + " is at (" + x + "," + y + ")");
         }
     }
     
@@ -151,7 +136,6 @@ public class AtlanticController implements Initializable {
     {
         if(items.size() == 0)
         {
-            System.out.println("WIN");
             atlanticComplete.setDisable(false);
             atlanticComplete.setVisible(true);
             

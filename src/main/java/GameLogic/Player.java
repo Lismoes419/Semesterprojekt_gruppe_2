@@ -29,29 +29,6 @@ public class Player {
         inventory.add(item);
     }
     
-    public String getAllItems()
-    {
-        if(inventory.size() == 0)
-        {
-            return "Your inventory is empty!";
-        }
-        
-        String returnString = "Inventory:";
-        for(int i = 0; i < inventory.size(); i++)
-        {
-            if(i == 0)
-            {
-                returnString += " " + inventory.get(i).getName() + "(" + inventory.get(i).getAmount() + ")";
-            } else
-            {
-                returnString += ", " + inventory.get(i).getName() + "(" + inventory.get(i).getAmount() + ")";
-            }
-        }
-        
-        return returnString;
-        //System.out.println(returnString);
-    }
-    
     public void removeItem(Garbage garbage)
     {
         inventory.remove(garbage);
@@ -68,22 +45,6 @@ public class Player {
         }
         
         return null;
-    }
-    
-    public void emptyInventory()
-    {
-        inventory.clear();
-    }
-    
-    public int getInventoryValue()
-    {
-        int value = 0;
-        for(int i = 0; i < inventory.size(); i++)
-        {
-            value += inventory.get(i).getAmount();
-        }
-        
-        return value;
     }
     
     public ArrayList<Garbage> getInventory()
@@ -116,7 +77,6 @@ public class Player {
     public void addPoints(int amt)
     {
         this.points += amt;
-        //System.out.println("You now have " + points + " points");
     }
     public void removePoints(int amt)
     {

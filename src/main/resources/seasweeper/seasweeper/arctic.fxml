@@ -19,7 +19,7 @@
             <Image url="file:./resources/quiz.png" />
          </image>
       </ImageView>
-      <Label fx:id="label1" layoutX="87.0" layoutY="27.0" prefHeight="93.0" prefWidth="466.0" text="Hvor meget plastic bliver&#10;der udledt i havene om året?&#10;">
+      <Label fx:id="label1" layoutX="87.0" layoutY="27.0" prefHeight="93.0" prefWidth="466.0" text="How much plastic enters&#10;the oceans each year?">
          <font>
             <Font size="33.0" />
          </font>
@@ -42,17 +42,17 @@
             <Font size="22.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="radiobutton3" layoutX="104.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#correctAnswer" text="2 millioner Tons" toggleGroup="$spørgsmål1">
+      <RadioButton fx:id="radiobutton3" layoutX="104.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#correctAnswer" text="2 million Tons" toggleGroup="$spørgsmål1">
          <font>
             <Font size="22.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="radiobutton4" layoutX="104.0" layoutY="211.0" mnemonicParsing="false" onMouseClicked="#correctAnswer" prefHeight="39.0" prefWidth="207.0" text="8 millioner Tons" toggleGroup="$spørgsmål1">
+      <RadioButton fx:id="radiobutton4" layoutX="104.0" layoutY="211.0" mnemonicParsing="false" onMouseClicked="#correctAnswer" prefHeight="39.0" prefWidth="207.0" text="8 million Tons" toggleGroup="$spørgsmål1">
          <font>
             <Font size="22.0" />
          </font>
       </RadioButton>
-      <Label fx:id="label3" layoutX="90.0" layoutY="331.0" prefHeight="93.0" prefWidth="466.0" text="Hvor mange dyr dør hvert år&#10;pga. plastic i havene?&#10;">
+      <Label fx:id="label3" layoutX="90.0" layoutY="331.0" prefHeight="93.0" prefWidth="489.0" text="How many animals die each year as&#10;result of plastic in the oceans ?">
          <font>
             <Font size="33.0" />
          </font></Label>
@@ -60,11 +60,11 @@
          <font>
             <Font size="25.0" />
          </font></Label>
-      <Label fx:id="label5" layoutX="740.0" layoutY="27.0" prefHeight="93.0" prefWidth="466.0" text="Hvor mange stykker mikroplastic er&#10;der i havene lige nu?">
+      <Label fx:id="label5" layoutX="740.0" layoutY="27.0" prefHeight="93.0" prefWidth="466.0" text="How many pieces of &#10;microplastic is in the oceans ?">
          <font>
             <Font size="33.0" />
          </font></Label>
-      <Label fx:id="label7" layoutX="740.0" layoutY="331.0" prefHeight="93.0" prefWidth="466.0" text="Ender mikroplasticstykker i dit drikkevand&#10;eller i din mad (så som fisk)?&#10;">
+      <Label fx:id="label7" layoutX="740.0" layoutY="331.0" prefHeight="93.0" prefWidth="466.0" text="Does microplastic end up in&#10;your food or your drinking water?">
          <font>
             <Font size="33.0" />
          </font></Label>
@@ -91,7 +91,7 @@
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton8" layoutX="111.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#correctAnswer2" text="Over 2.5 million" toggleGroup="$spørgsmål2">
+      <RadioButton fx:id="radiobutton8" layoutX="111.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#correctAnswer2" text="&gt; 2.5 million" toggleGroup="$spørgsmål2">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
@@ -102,34 +102,34 @@
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton10" layoutX="755.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="15 millioner" toggleGroup="$spørgsmål3">
+      <RadioButton fx:id="radiobutton10" layoutX="755.0" layoutY="156.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="15 million" toggleGroup="$spørgsmål3">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton11" layoutX="755.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="8.6 milliader" toggleGroup="$spørgsmål3">
+      <RadioButton fx:id="radiobutton11" layoutX="755.0" layoutY="186.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="8.6 billion" toggleGroup="$spørgsmål3">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton12" layoutX="755.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="5.2 trillioner" toggleGroup="$spørgsmål3">
+      <RadioButton fx:id="radiobutton12" layoutX="755.0" layoutY="217.0" mnemonicParsing="false" onMouseClicked="#correctAnswer3" text="5.2 trillion" toggleGroup="$spørgsmål3">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton13" layoutX="755.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Begge dele">
+      <RadioButton fx:id="radiobutton13" layoutX="755.0" layoutY="436.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Both">
          <toggleGroup>
             <ToggleGroup fx:id="spørgsmål4" />
          </toggleGroup>
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton14" layoutX="755.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Ingen af delene" toggleGroup="$spørgsmål4">
+      <RadioButton fx:id="radiobutton14" layoutX="755.0" layoutY="466.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Neither" toggleGroup="$spørgsmål4">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton15" layoutX="755.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Det ender i drikkevandet" toggleGroup="$spørgsmål4">
+      <RadioButton fx:id="radiobutton15" layoutX="755.0" layoutY="496.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Drinking water" toggleGroup="$spørgsmål4">
          <font>
             <Font size="22.0" />
          </font></RadioButton>
-      <RadioButton fx:id="radiobutton16" layoutX="755.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Det ender i maden" toggleGroup="$spørgsmål4">
+      <RadioButton fx:id="radiobutton16" layoutX="755.0" layoutY="526.0" mnemonicParsing="false" onMouseClicked="#correctAnswer4" text="Food" toggleGroup="$spørgsmål4">
          <font>
             <Font size="22.0" />
          </font></RadioButton>

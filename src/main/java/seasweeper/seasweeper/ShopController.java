@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seasweeper.seasweeper;
+
 
 import GameLogic.ItemDatabase;
 import java.io.IOException;
@@ -17,13 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.Pane;
-import javafx.scene.text.Text;
-/**
- * FXML Controller class
- *
- * @author jakobrasmussen
- */
+
+
 public class ShopController implements Initializable {
 
 
@@ -37,9 +28,8 @@ public class ShopController implements Initializable {
     @FXML private TextField finsText;
     @FXML private TextField gogglesText;
     @FXML private TextField pointsLabel;
-    /**
-     * Initializes the controller class.
-     */
+   
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO

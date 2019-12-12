@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package seasweeper.seasweeper;
 
 import GameLogic.Garbage;
@@ -24,13 +19,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 
-/**
- * FXML Controller class
- *
- * @author jakobrasmussen
- */
+
 public class DumpsterController implements Initializable {
 
     private ImageView selection;
@@ -43,9 +33,7 @@ public class DumpsterController implements Initializable {
     @FXML private Button primary;
     @FXML private TextField pointsLabel;
     
-    /**
-     * Initializes the controller class.
-     */
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -65,27 +53,18 @@ public class DumpsterController implements Initializable {
             selected = true;
         }
     }
-    private void deselectItem(MouseEvent event)
-    {
-        selection.setScaleX(selection.getFitWidth() / 1);
-        selection.setScaleX(selection.getFitWidth() / 1);
-        selection = null;
-        selected = false;
-    }
     
     @FXML
     private void sort(MouseEvent event)
     {
         if(!selected)
         {
-            System.out.println("You haven't selected any item");
             return; //Stop metode
         }
         ImageView image = (ImageView)event.getSource();
         
         ItemDatabase database = new ItemDatabase();
         Garbage item = App.getGame().getPlayer().getItem(selection.getId());
-        //Garbage item = database.getItem(selection.getId());
         //Dumpster ID
         String[] parts = image.getId().split("_");
         int dumpsterID = Integer.parseInt(parts[1]);
@@ -96,7 +75,7 @@ public class DumpsterController implements Initializable {
             //We did it bois
             App.getGame().getPlayer().addPoints(item.getAmount());
         } else{
-            //
+            //We didn't do it bois
             System.out.println("0 points");
         }
         
